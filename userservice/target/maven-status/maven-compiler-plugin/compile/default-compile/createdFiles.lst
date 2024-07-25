@@ -1,0 +1,5 @@
+com/cocou/mc/mclodging/userservice/entity/User.class
+com/cocou/mc/mclodging/userservice/controller/UserController.class
+com/cocou/mc/mclodging/userservice/UserServiceApplication.class
+com/cocou/mc/mclodging/userservice/service/UserService.class
+com/cocou/mc/mclodging/userservice/repository/UserRepository.class
