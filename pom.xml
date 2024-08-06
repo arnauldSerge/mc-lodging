@@ -20,6 +20,8 @@
 	<module>paiement-service</module>
 	<module>userservice</module>
 	<module>eurekaserver</module>
+	<module>client-ui</module>
+	<module>ZuulApiGateway</module>
   </modules>
       
   

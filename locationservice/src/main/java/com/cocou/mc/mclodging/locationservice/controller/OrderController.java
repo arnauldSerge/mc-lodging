@@ -17,7 +17,7 @@ import com.cocou.mc.mclodging.locationservice.model.Order;
 import com.cocou.mc.mclodging.locationservice.service.OrderService;
 
 @RestController
-@RequestMapping("/order-service")
+@RequestMapping("api/orders")
 public class OrderController {
 	
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
@@ -28,31 +28,30 @@ public class OrderController {
     public OrderController() {
         logger.info("OrderController initialized");
     }
+   
 
-    @GetMapping("/orders")
+   
+
+    @GetMapping
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
         return ResponseEntity.ok(orders);
-    }
-    
-    
-    @GetMapping("/ordre")
-    public ResponseEntity<String> get() {
-        return ResponseEntity.ok("bonjour");
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable("id") Long id) {
         Order order = orderService.getOrderById(id);
-        if (order != null) {
-            return ResponseEntity.ok(order);
-        } else {
-            return ResponseEntity.notFound().build();
+        if(Objects.isNull(order)) {
+        	throw new com.cocou.mc.mclodging.locationservice.exception.CommandeNotFoundException("Cette commande n'existe pas");
         }
+         return ResponseEntity.notFound().build();
     }
-
-    @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+    
+    
+    
+    @PostMapping("createOrder")
+    public //ResponseEntity<Order> 
+    ResponseEntity<Order>  createOrder(@RequestBody Order order) {
         Order createdOrder = orderService.createOrder(order);
         return ResponseEntity.ok(createdOrder);
     }
