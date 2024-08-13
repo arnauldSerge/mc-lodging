@@ -93,7 +93,7 @@ public class ClientController {
 
 		model.addAttribute("paiementOk", paiementAccepte); // on envoi un Boolean paiementOk à la vue
 
-		return "confirmation";
+		return "Confirmation";
 	}
 
 	//Génére une serie de 16 chiffres au hasard pour simuler vaguement une CB

@@ -1,5 +1,7 @@
 package com.cocou.mc.mclodging.locationservice.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +17,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long productId;
-    private int quantity;
-    private double totalPrice;
-
+    private int quantite;
+    private LocalDateTime dateCommande;
+    private Boolean commandePayee;
 }
