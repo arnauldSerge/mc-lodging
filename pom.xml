@@ -22,6 +22,7 @@
 	<module>eurekaserver</module>
 	<module>client-ui</module>
 	<module>ZuulApiGateway</module>
+	<module>config-server-repo</module>
   </modules>
       
   
