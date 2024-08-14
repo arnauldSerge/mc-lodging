@@ -1,6 +1,7 @@
 package com.cocou.mc.mclodging.userservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import com.cocou.mc.mclodging.userservice.service.UserService;
 
 @RestController
 @RequestMapping("api/users")
+@RefreshScope
 public class UserController {
 	@Autowired
 	private UserService userService;
