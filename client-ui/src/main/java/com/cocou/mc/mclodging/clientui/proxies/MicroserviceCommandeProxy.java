@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.cocou.mc.mclodging.clientui.beans.CommandeBean;
 import com.cocou.mc.mclodging.clientui.configuration.FeignExceptionConfig;
 
-@FeignClient(name = "order-service", url = "localhost:8082", configuration = FeignExceptionConfig.class)
+@FeignClient(name = "order-service", url = "localhost:8282", configuration = FeignExceptionConfig.class)
 public interface MicroserviceCommandeProxy {
     @PostMapping(value = "api/orders/createOrder")
     CommandeBean ajouterCommande(@RequestBody CommandeBean commande);
